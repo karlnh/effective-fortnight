@@ -4,15 +4,17 @@ const userSchema = new Schema(
     {
         username: {
             type: String,
-            unique: true, // username must be unique
+            unique: true,
             required: true,
             trim: true,
             lowercase: true,
         },
         email: {
             type: String,
-            required: true,
             unique: true,
+            required: true,
+            trim: true,
+            lowercase: true,
             // https://stackoverflow.com/questions/9238640/how-long-can-a-tld-possibly-be
             // https://mongoosejs.com/docs/validation.html#custom-validators
             validate: {
