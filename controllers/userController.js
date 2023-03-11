@@ -18,6 +18,7 @@ module.exports = {
     },
 
     deleteUser(req, res) {
+        // must also delete associated thoughts
 
     },
 
