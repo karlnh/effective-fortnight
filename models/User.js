@@ -32,7 +32,9 @@ const userSchema = new Schema(
             getters: true,
             virtuals: true,
         },
-        id: false,
+        // id: false,
+        // can't tell if this line will ruin the friends: [userSchema] list.
+        // keeping it off since it seems to only turn off the .id getter.
     }
 );
 
