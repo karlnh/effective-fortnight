@@ -16,7 +16,7 @@ const userSchema = new Schema(
             // Must match a valid email address (look into Mongoose's matching validation)
             // https://stackoverflow.com/questions/9238640/how-long-can-a-tld-possibly-be
             // i have no idea if this is the right way to do this. committing for now
-            match: { $regex: /^([\w\.-]+)@([\w\.-]+)\.([\w\.]{1,63})$/ },
+            match: { $regex: /^([\w\.-]+)@([\w\.-]+)\.([\w\.]{2,63})$/ },
         },
         thoughts: [thoughtSchema],
         friends: [userSchema],
