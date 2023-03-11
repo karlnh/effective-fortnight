@@ -13,7 +13,6 @@ const userSchema = new Schema(
             type: String,
             required: true,
             unique: true,
-            // Must match a valid email address (look into Mongoose's matching validation)
             // https://stackoverflow.com/questions/9238640/how-long-can-a-tld-possibly-be
             // https://mongoosejs.com/docs/validation.html#custom-validators
             validate: {
