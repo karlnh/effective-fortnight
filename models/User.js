@@ -15,8 +15,13 @@ const userSchema = new Schema(
             unique: true,
             // Must match a valid email address (look into Mongoose's matching validation)
             // https://stackoverflow.com/questions/9238640/how-long-can-a-tld-possibly-be
-            // i have no idea if this is the right way to do this. committing for now
-            match: { $regex: /^([\w\.-]+)@([\w\.-]+)\.([\w\.]{2,63})$/ },
+            // https://mongoosejs.com/docs/validation.html#custom-validators
+            validate: {
+                validator: function(v) {
+                    return /^([\w\.-]+)@([\w\.-]+)\.([\w\.]{2,63})$/.test(v);
+                },
+                message: email => `${email} is not a valid email!`
+            },
         },
         thoughts: [thoughtSchema],
         friends: [userSchema],
