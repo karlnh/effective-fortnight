@@ -32,6 +32,18 @@ thoughtSchema.virtual('reactionCount')
         return this.reactions.length;
 });
 
+// thoughtSchema.pre('save', function() {
+//     thoughtSchema.set(v => {
+//         const year = v.substring(0, 3);
+//         const month = v.substring(5, 6);
+//         const day = v.substring(8, 9);
+//         const time = v.substring(10, 14);
+//         const formattedTime = `${month}/${day}/${year} at ${time}`;
+//         this.set({ createdAt: formattedTime });
+//     });
+// });
+
+
 const Thought = model('thought', thoughtSchema);
 
 module.exports = Thought;

@@ -91,8 +91,8 @@ module.exports = {
         )
         .then((user) =>
             !user
-                ? res.status(404).json({ message: "Video found but no user found with this id"})
-                : res.json({ message: "Video successfully deleted"})
+                ? res.status(404).json({ message: "Thought found but no user found with this id"})
+                : res.json({ message: "Thought successfully deleted"})
         )
         .catch((err) => {
             console.log(err);
