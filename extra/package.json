@@ -1,0 +1,20 @@
+{
+  "name": "effective-fortnight",
+  "description": "MongoDB social media backend project",
+  "main": "index.js",
+  "license": "GPL v3",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index",
+    "seed": "node utils/seed",
+    "lint": "npx eslint **/*.js"
+  },
+  "dependencies": {
+    "eslint": "^8.36.0",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}
