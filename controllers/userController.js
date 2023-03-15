@@ -5,18 +5,26 @@ const User = require('../models/User');
 module.exports = {
     createUser(req, res) {
         User.create(req.body)
-        .then((dbUserData) => res.json(dbUserData))
-        .catch((err) => res.status(500).json(err));
-        // res.send(`Creating user with your request: ${req.body}...`);
+            .then((dbUserData) => res.json(dbUserData))
+            .catch((err) => res.status(500).json(err));
     },
     createFriend(req, res) {
         res.send(`Creating new friend at user ID ${req.params.userId}...`);
     },
     getUsers(req, res) {
-        res.send('Finding all users...');
+        User.find()
+            .then((users) => res.json(users))
+            .catch((err) => res.status(500).json(err));
     },
     getSingleUser(req, res) {
-        res.send(`Finding user by ID ${req.params.userId}...`);
+        User.findOne({_id: req.params.userId})
+            .select('-__v')
+            .then((user) =>
+                !user
+                    ? res.status(404).json({message: 'No user found with that ID'})
+                    : res.json(user)
+            )
+            .catch((err) => res.status(500).json(err));
     },
     updateUser(req, res) {
         res.send(`Updating user by ID ${req.params.userId}...`);
