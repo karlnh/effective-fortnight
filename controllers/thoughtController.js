@@ -1,6 +1,3 @@
-const Thought = require('../models/Thought');
-const Reaction = require('../models/Reaction');
-
 module.exports = {
     createThought(req, res) {
         res.send(`Creating thought with your request: ${req.body}`);

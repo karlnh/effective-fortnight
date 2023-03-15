@@ -11,10 +11,7 @@ const thoughtSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now,
-            // Use a getter method to format the timestamp on query
-            // How?
         },
-        // Is this supposed to be an actual subdocument? Probably not?
         username: {
             type: String,
             required: true,
@@ -32,7 +29,7 @@ const thoughtSchema = new Schema(
 thoughtSchema.virtual('reactionCount')
     .get(function() {
         return this.reactions.length;
-    });
+});
 
 const Thought = model('thought', thoughtSchema);
 
