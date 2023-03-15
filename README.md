@@ -10,8 +10,10 @@ After downloading or cloning the repository, type `npm run start` to get the ser
 
 ## Usage
 
-(https://drive.google.com/file/d/1JMytDWvktRSbBOzu874rPGmT4EQmcEQf/view?usp=share_link)
+https://user-images.githubusercontent.com/114628247/225465125-40ca0abb-0039-48b5-9706-d2d3d6219be7.mp4
 
 ## License
 
 This project is licensed under the [GNU General Public License v3](https://www.gnu.org/licenses/gpl-3.0.html).
+
+
